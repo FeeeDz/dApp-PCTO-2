@@ -15,9 +15,11 @@ function setCookie(cookieName, value,  expireDate) {document.cookie = `${cookieN
 
 let isMetaMask = Boolean(window.ethereum);
 //if metamask is not installed alert the user and don't do anything
-if(!isMetaMask) alert("Please install MetaMask"); //add button to install metamask on browser
+
+if(!isMetaMask) document.getElementById('install-metamask-btn').style.display = 'block';
 
 else{
+    document.getElementById('install-metamask-btn').style.display = 'none';
     checkCookies();
 
     loginBtn.addEventListener('click' , async () => {

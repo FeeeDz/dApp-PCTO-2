@@ -1,5 +1,5 @@
 var btn_causale = document.getElementById('dropdownButton');
-var notvalidparameters = document.getElementById('notvalidparameters');
+var notvalidparameters = document.getElementById('scelte-sbagliate');
 
 const contractAddress = "0xf8e81D47203A594245E36C48e151709F0C19fBe8";
 let abi = {};
@@ -86,11 +86,11 @@ events();
 btn_causale.addEventListener('click', async function() {
 
     //get the reason for the donation and the amount of the donation
-    var reason = document.getElementById('sel_donatore').value;
+    var reason = document.getElementById('sel_donator').value;
     var quantityOfEthereum = document.getElementById('quantita').value.toString();
 
     //check for non valid parameter passed
-    if(reason === "-- Dona Per --" || quantityOfEthereum === "") notvalidparameters.innerText = "Non hai inserito alcuni parametri correttamente, riprova";
+    if(reason === "--Scegli--" || quantityOfEthereum === "") notvalidparameters.innerText = "Non hai inserito alcuni parametri correttamente, riprova";
     
     else {
         notvalidparameters.innerText = "";

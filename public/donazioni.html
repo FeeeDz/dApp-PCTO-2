@@ -21,19 +21,13 @@
     <script src="../path/to/flowbite/dist/flowbite.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
 
-
-
     <!-- Animation CSS-->
     <link rel="stylesheet" href="stylesheets/animation.css">
 
 </head>
 
-
-
 <body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
-
-
 
     <div class="h-screen pb-14 bg-right bg-cover" style="background-image:url('img/bg.svg');">
         <!--Nav-->
@@ -85,7 +79,6 @@
             <!--center the h1-->
             <!--align to start -->
 
-
             <div class="w-full md:w-1/2 md:mx-auto ">
                 <h1
                     class="my-4 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center md:text-center slide-in-bottom-h1">
@@ -97,23 +90,31 @@
 
                 <div class="flex justify-center mt-8 slide-in-bottom">
 
-                    <button id="dropdownButton" data-dropdown-toggle="dropdown"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        type="button">Scegli Causa <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                            </path>
-                        </svg></button>
-
+                   <select name="sel_donator" id="sel_donator">
+                        <option disabled selected>Scegli</option>
+                        <option value="Cervello">Cancro al Cervello</option>
+                        <option value="Polmoni">Cancro ai Polmoni</option>
+                        <option value="Sangue">Cancro al Sangue</option>
+                        <option value="Pancreas">Cancro al Pancreas</option>
+                        <option value="Ossa">Cancro alle Ossa</option>
+                        <option value="Midollo">Cancro al Midollo</option>
+                   </select>
+                     
                     <div id="dropdown"
                         class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
                         <ul class="py-1" aria-labelledby="dropdownButton">
-                            <!--select option list-->
-                            
                           
                         </ul>
                     </div>
                 </div>
+
+                <div class="flex justify-center mt-8">
+                    <button class="py-4 px-4 text-white bg-purple-800 hover:bg-purple-900 shadow-lg rounded-full slide-in-bottom">
+                        Dona
+                    </button>
+                </div>
+
+                <p id="scelte-sbagliate" class="text-black-400 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in"> </p>    
 
                 <div class="relative h-32 w-32 ...">
                     <div class="absolute inset-x-0 bottom-0 h-16 ...">
