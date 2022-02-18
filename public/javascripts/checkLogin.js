@@ -5,7 +5,7 @@ function redirect(page){window.location.href = page; }
 
 //functions that check if cookies are setted: in that case if they're setted go to logged.html otherwise
 //stay in notlogged.html and do the login
-function checkCookies(){if(document.cookie.indexOf('loggedin=true') !== -1) redirect('success.hmtl'); }
+function checkCookies(){if(document.cookie.indexOf('loggedin=true') !== -1) redirect('success.html'); }
 
 //function that handle the chain changed event
 function handleChainChanged(){window.location.reload(); }
