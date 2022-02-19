@@ -2,6 +2,7 @@ var amount;
 var reach;
 
 var x = $(window).width() - 400;
+$('.choose').css('display', 'none');
 
 $('.donate form').on("click", function(){
   amount = $('input[name=amount]:checked', '#donAmount').val();
@@ -32,7 +33,7 @@ $("#custom").css("margin-right", x/2);
     } else {
       $('body').removeClass('custom');
       $(".donate").hide("slide", { easing: "easeInQuart", direction: "left" }, 700, function(){
-        $("#details").show("slide", { easing: "easeOutQuart", direction: "right" }, 700);
+        $(".choose").show("slide", { easing: "easeOutQuart", direction: "right" }, 700);
       });
     }
   }, 150);
@@ -45,7 +46,7 @@ $('#custom .next').on("click", function(){
   $('#check span').text("ETH " + amount);
   $('#confirm strong').text(reach + " voters");
   $("#custom").hide("slide", { easing: "easeInQuart", direction: "left" }, 700, function(){
-    $("#details").show("slide", { easing: "easeOutQuart", direction: "right" }, 700);
+    $(".choose").show("slide", { easing: "easeOutQuart", direction: "right" }, 700);
   });
 });
 
@@ -55,52 +56,33 @@ $('#custom .back').on("click", function(){
   });
 });
 
-$('#details .next').on("click", function(){
-  $("#details").hide("slide", { easing: "easeInQuart", direction: "left" }, 700, function(){
-    $("#card").show("slide", { easing: "easeOutQuart", direction: "right" }, 700);
-  });
+
+$('.choose form').on("click", function(){
+  chooseReason = $('input[name=choose-reason]:checked', '#chooseReason').val();
+  console.log(chooseReason);
+  $('#confirm .choose-reason').text("ETH " + amount);
+  $('#check span').text("ETH " + amount);
+  $('#confirm strong').text(reach + " voters");
 });
 
-$('#details .review').on("click", function(){
-    $("#details").hide("slide", { easing: "easeInQuart", direction: "left" }, 700, function(){
-        $("#check").show("slide", { easing: "easeOutQuart", direction: "right" }, 700);
-      });
-});
-
-$('#details .back').on("click", function(){
-  
-  if ( $('body.custom').length > 0 ){
-      $("#details").hide("slide", { easing: "easeInQuart", direction: "right" }, 700, function(){
-    $("#custom").show("slide", { easing: "easeOutQuart", direction: "left" }, 700);
-  });
+$(".choose button").on("click", function(){
+  $(".choose").toggleClass("active");
+  if( $(".choose").is(".active") ) {
+    $("form").slideDown(450, "easeOutQuart");
   } else {
-      $("#details").hide("slide", { easing: "easeInQuart", direction: "right" }, 700, function(){
-    $(".donate").show("slide", { easing: "easeOutQuart", direction: "left" }, 700);
-  });
+    $("form").slideUp(300, "easeInOutQuad");
   }
-  
 });
 
-$('#card .next').on("click", function(){
-  $("#card").hide("slide", { easing: "easeInQuart", direction: "left" }, 700, function(){
-  });
-});
-
-$('#card .back').on("click", function(){
-  $("#card").hide("slide", { easing: "easeInQuart", direction: "right" }, 700, function(){
-    $(".details").show("slide", { easing: "easeOutQuart", direction: "left" }, 700);
-  });
-});
-
-$('#card .next').on("click", function(){
-  $("#card").hide("slide", { easing: "easeInQuart", direction: "left" }, 700, function(){
-    $("#check").show("slide", { easing: "easeOutQuart", direction: "right" }, 700);
+$('.choose label').on("click", function(){
+  $(".choose ").hide("slide", { easing: "easeInQuart", direction: "left" }, 700, function(){
+    $("#check").show("slide", { easing: "easeOutQuart", direction: "left" }, 700);
   });
 });
 
 $('#check .back').on("click", function(){
   $("#check").hide("slide", { easing: "easeInQuart", direction: "right" }, 700, function(){
-    $("#card").show("slide", { easing: "easeOutQuart", direction: "left" }, 700);
+    $(".choose").show("slide", { easing: "easeOutQuart", direction: "left" }, 700);
   });
 });
 
