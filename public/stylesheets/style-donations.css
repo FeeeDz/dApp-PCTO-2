@@ -14,7 +14,7 @@ hr {
 
 button {
   margin-top: 4em;
-  background-color: rgb(129, 140, 248);
+  background-color: rgb(63, 76, 190);
   border: 1px solid rgb(129, 140, 248);
   color: white;
   font-family: 'Lato';
@@ -410,7 +410,7 @@ button {
 }
 
 #check button {
-  background-color: rgb(129, 140, 248);
+  background-color: rgb(63, 76, 190);
   border-color: rgb(129, 140, 248);
   font-size: 1.2em;
   -webkit-transition: all 0.2s ease;
@@ -433,7 +433,7 @@ button {
   font-weight: 300;
   letter-spacing: 0.03em;
   padding-top: 1em;
-  color: white;
+  color: rgb(1, 0, 70);
   margin: 0;
   font-size: 1.3em;
 }
@@ -442,7 +442,7 @@ button {
   text-align: center;
   margin: 0;
   letter-spacing: 0.2em;
-  color: #96bdff;
+  color: #2e7ce2;
   font-weight: 700;
   opacity: 0.7;
   text-transform: uppercase;
@@ -454,12 +454,12 @@ button {
   display: inline-block;
   margin: 0 auto;
   border-radius: 5px;
-  color: rgb(226, 226, 226);
+  color: rgb(147, 185, 255);
   font-weight: 700;
   font-size: 3.2em;
   letter-spacing: 0.1em;
   padding: 0.2em 1em 0.3em;
-  text-shadow: 2px 2px #255bb5;
+  text-shadow: 2px 2px #113675;
 }
 
 #confirm {
@@ -483,7 +483,7 @@ button {
 }
 
 #confirm p {
-  color: rgb(102, 100, 100);
+  color: rgb(1, 0, 70);
   line-height: 1.6;
   font-size: 1.4em;
   font-weight: 300;
@@ -492,7 +492,7 @@ button {
 
 #confirm span {
   color: white;
-  background-color: rgb(129, 140, 248);
+  background-color: rgb(63, 76, 190);
   padding: 0.25em 0.45em;
   margin: 0 0.15em;
   font-weight: 700;
