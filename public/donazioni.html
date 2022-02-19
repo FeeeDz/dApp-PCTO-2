@@ -10,6 +10,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Font Awesome if you need it
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 	-->
@@ -18,15 +19,25 @@
     <!--Replace with your tailwind.css once created-->
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-    <script src="../path/to/flowbite/dist/flowbite.js"></script>
+    <!-- <script src="../node_modules/flowbite/dist/flowbite.js"></script>-->
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
 
     <!-- Animation CSS-->
     <link rel="stylesheet" href="stylesheets/animation.css">
 
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+
+    <link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/78060/animate.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="stylesheets/style-donations.css">
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+
+
 </head>
 
 <body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
+
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
 
     <div class="h-screen pb-14 bg-right bg-cover" style="background-image:url('img/bg.svg');">
@@ -73,66 +84,103 @@
 
         </div>
 
-        <!--Main-->
-        <div class="container pt-6 md:pt-0 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+        <div class="donate">
+            <button>Donate</button>
+            <form name="donAmount" id="donAmount">
+                <input type="radio" value="0.5" name="amount" id="halfether">
+                <label for="halfether">ETH 0.5</label>
+                <input type="radio" value="1" name="amount" id="oneether">
+                <label for="oneether">ETH 1</label>
+                <input type="radio" value="5" name="amount" id="fiveether">
+                <label for="fiveether">ETH 5</label>
+                <input type="radio" value="other" name="amount" id="other">
+                <label for="other">CUSTOM</label>
+            </form>
+        </div>
 
-            <!--center the h1-->
-            <!--align to start -->
-
-            <div class="w-full md:w-1/2 md:mx-auto ">
-                <h1
-                    class="my-4 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center md:text-center slide-in-bottom-h1">
-                    Dona
-                </h1>
-                <p class="text-center md:text-center text-gray-600 text-lg md:text-xl slide-in-bottom-subtitle">
-                    Seleziona la causa per cui vuoi donare
-                </p>
-
-                <div class="flex justify-center mt-8 slide-in-bottom">
-
-                   <select name="sel_donator" id="sel_donator">
-                        <option disabled selected>Scegli</option>
-                        <option value="Cervello">Cancro al Cervello</option>
-                        <option value="Polmoni">Cancro ai Polmoni</option>
-                        <option value="Sangue">Cancro al Sangue</option>
-                        <option value="Pancreas">Cancro al Pancreas</option>
-                        <option value="Ossa">Cancro alle Ossa</option>
-                        <option value="Midollo">Cancro al Midollo</option>
-                   </select>
-                     
-                    <div id="dropdown"
-                        class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
-                        <ul class="py-1" aria-labelledby="dropdownButton">
-                          
-                        </ul>
-                    </div>
+        <div id="custom">
+            <h2>Donation Amount</h2>
+            <form name="customDonation" id="customDonation">
+                <div class="input-group-1">
+                    <label for="custom-amount">ETH</label>
+                    <input id="custom-amount" name="custom-amount" type="text">
+                    <div class="warn"></div>
                 </div>
+            </form>
+            <div class="clearfix">
+                <button class="back" type="button">Back
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="next" type="button">Next</button>
+            </div>
+        </div>
 
-                <div class="flex justify-center mt-8">
-                    <button class="py-4 px-4 text-white bg-purple-800 hover:bg-purple-900 shadow-lg rounded-full slide-in-bottom">
-                        Dona
+        <section id="details">
+            <div class="contact-info">
+                <h2>Basic Information</h2>
+                <form class="clearfix">
+                    <div class="input-group-2">
+                        <label>First Name</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-group-2">
+                        <label>Last Name</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-group-1">
+                        <label>Email Address</label>
+                        <input type="text">
+                    </div>
+                    <hr>
+                </form>
+                <div class="clearfix">
+                    <button class="back" type="button">Back
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
+                    <button class="review" type="button">Review</button>
                 </div>
+            </div>
+        </section>
 
-                <p id="scelte-sbagliate" class="text-black-400 font-bold pb-8 lg:pb-6 text-center md:text-left fade-in"> </p>    
-
-                <div class="relative h-32 w-32 ...">
-                    <div class="absolute inset-x-0 bottom-0 h-16 ...">
-                        <div class="w-full pt-6 pb-6 text-sm text-center md:text-left fade-in">
-                            <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Copyright 2022
-                            </a>
-                        </div>
-
-                    </div>
-
-
+        <section class="processing">
+            <div class="check">
+                <span></span>
+                <div class="mask">
                 </div>
+                <span></span>
+            </div>
 
+            <div class="outer">
+                <div class="inner">
+                </div>
+                <div class="progress">
+                </div>
+            </div>
+            <span class="message">Processing</span>
+        </section>
 
-                <!-- jQuery if you need it
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  -->
-  <script src="./javascripts/controltransactions.js"></script>
+        <section id="check">
+            <h2>Confirm Payment</h2>
+            <p>Please confirm your contribution of</p>
+            <span>$8888</span>
+            <button class="next" type="button">Confirm</button>
+        </section>
+
+        <section id="confirm">
+            <h2>Thank You!</h2>
+            <p>Your <span class="amount">$25</span> donation will help a lot of people!</p>
+        </section>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+        <script src="./javascripts/donations-js.js"></script>
+        <!-- <script src="./javascripts/controltransactions.js"></script> -->
+
 
 </body>
 
