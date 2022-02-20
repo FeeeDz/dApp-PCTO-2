@@ -38,7 +38,6 @@ function handleChainChanged(){window.location.reload(); }
 
 //function that handle the account changed event checking if he changed account or if he disconnected
 function handleAccountChanged() {
-    console.log("account cambiato");
     if(isConnected()) {
 
         let account = window.ethereum.selectedAddress;
