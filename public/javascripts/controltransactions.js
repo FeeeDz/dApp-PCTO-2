@@ -70,7 +70,6 @@ btn_confirm.addEventListener('click', async function() {
         })
         .catch((err => {
           console.log("errore");
-        }));
-        
+        })); 
     }
 });

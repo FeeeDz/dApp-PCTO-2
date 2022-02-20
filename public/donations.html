@@ -164,12 +164,14 @@
             <p>Your <span class="amount"> $25</span> donation will help a lot of people!</p>
         </section>
 
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
         <script src='https://cdn.jsdelivr.net/npm/bignumber.js@9.0.2/bignumber.min.js'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
 
         <!-- cache buster for controllogged.js-->
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
         <script type="text/javascript">
             var cachebuster = Math.round(new Date().getTime() / 1000);
             document.write('<scr'+'ipt type="text/javascript" src="./javascripts/checklogged.js?cb=' +cachebuster+'"></scr' + 'ipt>');

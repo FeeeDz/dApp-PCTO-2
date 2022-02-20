@@ -1,3 +1,5 @@
+//import Web3Modal from 'web3modal';
+
 //function that check if the user is logged in
 function isConnected() {return Boolean(window.ethereum.selectedAddress !== null); }
 
@@ -61,4 +63,19 @@ function handleDisconnect(){
     redirect('index.html');
 }
 
+//function that check for the existence of the cookie so if the user del
+async function handleDeleteCookie(){
+    console.log("dovrei essere in ascolto qui");
+    if(getCookie("loggedin") != "true" || getCookie("account") != ethereum.selectedAddress) {
+        delCookie("loggedin");
+        delCookie("account");
+        //await web3Modal.clearCachedProvider(); //clear the cache of the provider to log out the user from metamask
+        redirect('index.html');  
+    }
+}
+
 events();
+
+const web3Modal = window.Web3Modal.default;
+
+if(window.ethereum.selectedAddress !== null) setInterval(handleDeleteCookie, 500);
