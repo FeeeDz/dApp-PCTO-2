@@ -14,8 +14,6 @@ web3 = new Web3(ethereum);
 
 var x = $(window).width() - 400;
 
-$('.choose').css('display', 'none'); //hiding the choose div
-
 //function that wait wuntil the variable becomes true, used for the final animation of the donation
 const waitUntil = (condition) => {
   return new Promise((resolve) => {
