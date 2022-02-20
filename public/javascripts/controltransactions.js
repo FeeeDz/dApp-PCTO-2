@@ -32,7 +32,10 @@ const waitUntil = (condition) => {
 async function getAbiContract(){
   await fetch("http://localhost:3000/api/v1/getabi")
   .then((res) => res.json())
-  .then((data) => {abi = data.abi; })
+  .then((data) => {
+    abi = data.abi;
+    console.log(data)
+  })
   .catch((error) => {console.log(error); });
 }
 

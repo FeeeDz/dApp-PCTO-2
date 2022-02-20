@@ -5,7 +5,7 @@ var path = require('path');
 
 
 router.get('/getabi', (req, res) => {
-    res.sendFile(path.join(__dirname, '../contracts/Donation.json'));
+    res.sendFile(path.join(__dirname, '../contracts/Donations.json'));
 });
 
 module.exports = router;
