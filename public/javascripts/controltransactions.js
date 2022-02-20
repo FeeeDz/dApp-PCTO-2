@@ -31,7 +31,7 @@ const waitUntil = (condition) => {
 }
 
 async function getAbiContract(){
-  await fetch("http://localhost:3000/api/v1/getabi")
+  await fetch("https://krypto-medical.herokuapp.com/api/v1/getabi")
   .then((res) => res.json())
   .then((data) => {abi = data.abi;} )
   .catch((error) => {console.log(error); });
