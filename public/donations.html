@@ -63,16 +63,16 @@
 
                                     </li>
                                     <li>
-                                        <a href="donazioni.html"
-                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Donazioni</a>
+                                        <a href="donations.html"
+                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Donations</a>
                                     </li>
                                     <li>
                                         <a href="stats.html"
-                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Statistiche</a>
+                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Stats</a>
                                     </li>
                                     <li>
                                         <a href="#"
-                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Crediti</a>
+                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Credits</a>
                                     </li>
                                 </ul>
                             </div>
@@ -126,8 +126,8 @@
                     <label for="Lunges">Lunges Cancer</label>
                     <input type="radio" value="Blood" name="choose-reason" id="Blood">
                     <label for="Blood">Blood Cancer</label>
-                    <input type="radio" value="Pancreas" name="choose-reason" id="Pancres">
-                    <label for="Pancres">Pancres Cancer</label>
+                    <input type="radio" value="Pancreas" name="choose-reason" id="Pancreas">
+                    <label for="Pancreas">Pancreas Cancer</label>
                     <input type="radio" value="Bones" name="choose-reason" id="Bones">
                     <label for="Bones">Bones Cancer</label>
                     <input type="radio" value="Marrow" name="choose-reason" id="Marrow">
@@ -156,7 +156,7 @@
             <h2>Confirm Payment</h2>
             <p>Please confirm your contribution of</p>
             <span>$8888</span>
-            <button class="next" type="button">Confirm</button>
+            <button id="btn-confirm" class="next" type="button">Confirm</button>
         </section>
 
         <section id="confirm">
@@ -164,12 +164,11 @@
             <p>Your <span class="amount"> $25</span> donation will help a lot of people!</p>
         </section>
 
+        <script src='https://cdn.jsdelivr.net/npm/bignumber.js@9.0.2/bignumber.min.js'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
-        <script src="./javascripts/donations-js.js"></script>
-        <!-- <script src="./javascripts/controltransactions.js"></script> -->
-
+        <script src="./javascripts/controltransactions.js"></script>
 
 </body>
 
