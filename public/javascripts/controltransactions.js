@@ -14,6 +14,7 @@ web3 = new Web3(ethereum);
 
 var x = $(window).width() - 400;
 
+$('.choose').css('display', 'none'); //hiding the choose div
 
 //function that wait wuntil the variable becomes true, used for the final animation of the donation
 const waitUntil = (condition) => {
@@ -32,14 +33,9 @@ const waitUntil = (condition) => {
 async function getAbiContract(){
   await fetch("http://localhost:3000/api/v1/getabi")
   .then((res) => res.json())
-  .then((data) => {
-    abi = data.abi;
-    console.log(data)
-  })
+  .then((data) => {abi = data.abi;} )
   .catch((error) => {console.log(error); });
 }
-
-$('.choose').css('display', 'none');
 
 $('.donate form').on("click", function(){
   amount = $('input[name=amount]:checked', '#donAmount').val();
