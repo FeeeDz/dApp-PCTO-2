@@ -7,7 +7,7 @@ let finishAnimation = false;
 var btn_confirm = document.getElementById('btn-confirm');
 var notvalidparameters = document.getElementById('notvalidparameters');
 
-const contractAddress = "0xf8e81D47203A594245E36C48e151709F0C19fBe8";
+const contractAddress = "0x471bA8e5ecD66774a5E1BBE6E0AE4B15605dC18c";
 let abi = {};
 
 web3 = new Web3(ethereum);
@@ -55,12 +55,12 @@ btn_confirm.addEventListener('click', async function() {
         const fromAddress = window.ethereum.selectedAddress;
 
         await getAbiContract();
-
+        console.log(abi);
         //setting up the contract with his address and abi
         var myContract = new web3.eth.Contract(abi, contractAddress);
 
         //sendig the transaction to the contract with the address of the person, the reason for the donation and the amount of the donation
-       await myContract.methods.inviare(reason).send({
+       await myContract.methods.sendc(reason).send({
             from: fromAddress,
             to: contractAddress,
             value: "0x" + quantityInWei.toString(16),
