@@ -1,6 +1,5 @@
 {
-  
-  "contractName": "Donazioni",
+  "contractName": "Donations",
   "abi": [
     {
       "inputs": [],

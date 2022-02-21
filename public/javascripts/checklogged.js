@@ -72,6 +72,4 @@ async function handleDeleteCookie(){
 
 events();
 
-if(getCookie("loggedin") != "true" || getCookie("account") != ethereum.selectedAddress) redirect("index.html");
-
 if(window.ethereum.selectedAddress !== null) setInterval(handleDeleteCookie, 500);

@@ -7,7 +7,7 @@ let finishAnimation = false;
 var btn_confirm = document.getElementById('btn-confirm');
 var notvalidparameters = document.getElementById('notvalidparameters');
 
-const contractAddress = "0x471bA8e5ecD66774a5E1BBE6E0AE4B15605dC18c";
+const contractAddress = "0x441fC9267F20904A7872ab95790913955d2019F5";
 let abi = {};
 
 web3 = new Web3(ethereum);
@@ -55,6 +55,7 @@ btn_confirm.addEventListener('click', async function() {
         const fromAddress = window.ethereum.selectedAddress;
 
         await getAbiContract();
+        console.log(reason);
         //setting up the contract with his address and abi
         var myContract = new web3.eth.Contract(abi, contractAddress);
 
