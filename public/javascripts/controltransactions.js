@@ -55,7 +55,6 @@ btn_confirm.addEventListener('click', async function() {
         const fromAddress = window.ethereum.selectedAddress;
 
         await getAbiContract();
-        console.log(reason);
         //setting up the contract with his address and abi
         var myContract = new web3.eth.Contract(abi, contractAddress);
 
@@ -64,7 +63,7 @@ btn_confirm.addEventListener('click', async function() {
             from: fromAddress,
             to: contractAddress,
             value: "0x" + quantityInWei.toString(16),
-            gas: "50000"
+            gas: "300000"
         },).then((response) => {
             finishAnimation = true;            
         })
