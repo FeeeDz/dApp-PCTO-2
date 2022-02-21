@@ -55,7 +55,6 @@ btn_confirm.addEventListener('click', async function() {
         const fromAddress = window.ethereum.selectedAddress;
 
         await getAbiContract();
-        console.log(abi);
         //setting up the contract with his address and abi
         var myContract = new web3.eth.Contract(abi, contractAddress);
 
