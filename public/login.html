@@ -56,34 +56,43 @@
                     Login
                 </h1>
                 <p class="text-center md:text-center text-gray-600 text-lg md:text-xl slide-in-bottom-subtitle">
-                    Connect your MetaMask wallet by clicking the icon below
+                    <span class="text-black-800">
+                        <b>
+                            Connect
+                        </b>
+                        your MetaMask wallet by
+                    </span><b>
+                        clicking the icon
+                    </b>
+                    below
                 </p>
 
                 <div class="flex justify-center mt-8 slide-in-bottom">
                     <!--link https://metamask.io/  -->
                     <a class="text-white font-bold py-2 px-4 rounded-full">
-                    <style>
-                        #logo-container svg {
-                            width: 250px;
-                            height: auto;
-                        }
-
-                        @media only screen and (max-width: 768px) {
+                        <style>
                             #logo-container svg {
-                                width: 150px;
+                                width: 250px;
                                 height: auto;
                             }
-                        }
-                    </style>
-                    <div id="logo-container">
-                        <script src="javascripts/animation-metamask.js"></script>
-                        <div>
-                            <a href="https://metamask.io/download/"><button id="install-metamask-btn"> Install MetaMask</button></a>
+
+                            @media only screen and (max-width: 768px) {
+                                #logo-container svg {
+                                    width: 150px;
+                                    height: auto;
+                                }
+                            }
+                        </style>
+                        <div id="logo-container">
+                            <script src="javascripts/animation-metamask.js"></script>
+                            <div>
+                                <a href="https://metamask.io/download/"><button id="install-metamask-btn"> Install
+                                        MetaMask</button></a>
+                            </div>
+                            <!-- button to install metamask on top right of the page -->
+
                         </div>
-                        <!-- button to install metamask on top right of the page -->
-                        
-                    </div>
-                    
+
 
                 </div>
 
@@ -101,10 +110,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   -->
 
-<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+            <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
 
-<script src="./javascripts/checkLogin.js"></script>
+            <script src="./javascripts/checkLogin.js"></script>
 
 
 </body>
