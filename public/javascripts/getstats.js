@@ -13,5 +13,4 @@ async function getStats() {
     });
 }
 
-
 getStats();
