@@ -7,13 +7,14 @@ router.get('/getabi', (req, res) => {
     res.sendFile(path.join(__dirname, '../contracts/Donations.json'));
 });
 
-router.post('setstats', (req, res) => {
+router.get('/getstats', (req, res) => {
+    res.sendFile(path.join(__dirname, '../jsonmiddlewaredata/Stats.json'));
+});
+
+router.post('/setstats', (req, res) => {
     console.log("req.body: " + req.body);
     writeStats(req.body);
 });
 
-router.get('getStats', (req, res) => {
-    res.sendFile(path.join(__dirname, '../jsonmiddlewaredata/Stats.json'));
-});
 
 module.exports = router;

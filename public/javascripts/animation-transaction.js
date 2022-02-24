@@ -38,7 +38,7 @@ $('#custom .next').on("click", function () {
 
     //checking if amount is a number (float or integer) or not
     //if it's not a number the user won't go further until the input is
-    if (!isNaN(Number(amount))) {
+    if (!isNaN(Number(amount)) && amount !== undefined && amount !== "") {
         $('#confirm .amount').text("ETH " + amount);
         $('#check span').text("ETH " + amount);
         $("#custom").hide("slide", { easing: "easeInQuart", direction: "left" }, 700, function () {
