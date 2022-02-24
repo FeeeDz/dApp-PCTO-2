@@ -88,6 +88,10 @@
                                     </th>
                                     <th scope="col"
                                         class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                        Reason
+                                    </th>
+                                    <th scope="col"
+                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
                                         Amount Donated
                                     </th>
                                     <th scope="col"
@@ -97,61 +101,20 @@
                                     
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                            <tbody id="table-data" class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                                 <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <td
+                                    <td id="table-address"
                                         class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Apple Imac 27"</td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">
-                                        Desktop PC</td>
-                                    <td
+                                        indirizzo</td>
+                                    <td id="table-reason"
                                         class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        $1999</td>
-                                </tr>
-                                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <td
+                                        Causa</td>
+                                    <td id="table-amount"
                                         class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Apple MacBook Pro 17"</td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">
-                                        Laptop</td>
-                                    <td
+                                        Ammontare</td>
+                                    <td id="table-time-elapsed"
                                         class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        $2999</td>
-                                </tr>
-                                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        iPhone 13 Pro</td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">
-                                        Phone</td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        $999</td>
-                                </tr>
-                                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Apple Magic Mouse 2</td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">
-                                        Accessories</td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        $99</td>
-                                </tr>
-                                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Apple Watch Series 7</td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white">
-                                        Accessories</td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        $599</td>
+                                        </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -164,7 +127,6 @@
         <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
         <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 
         <!-- cache buster for checklogged.js-->
         <script type="text/javascript">

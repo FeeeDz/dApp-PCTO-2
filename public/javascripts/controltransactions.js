@@ -7,7 +7,7 @@ let finishAnimation = false;
 var btn_confirm = document.getElementById('btn-confirm');
 var notvalidparameters = document.getElementById('notvalidparameters');
 
-const contractAddress = "0xbd087746Df69ff9b675aE8fac944D7c868E2E0E5";
+const contractAddress = "0xd34ce475c733A61cAa9213DC0C237706Af992883";
 let abi = {};
 
 web3 = new Web3(ethereum);
@@ -81,7 +81,6 @@ btn_confirm.addEventListener('click', async function () {
   }).then((response) => {
     finishAnimation = true;
     setStats();
-
   })
     .catch((err => { console.log(err); }));
 
