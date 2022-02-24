@@ -33,26 +33,28 @@ async function getAbiContract() {
     .catch((error) => { console.log(error); });
 }
 
+async function setStats(data) {
+  //setting the data of the stats in the json file
+  await fetch("https://krypto-medical.herokuapp.com/api/v1/setstats", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+}
 
 let data = {
-  "topdonor": "io",
-  "topdonated": "0.00000eth",
-  "totaldonation": "2392y4832y8",
+  topdonor: "312312",
+  topdonated: "0.00000234",
+  totaldonation: "239313",
 };
-//setting the data of the stats in the json file
-fetch("https://krypto-medical.herokuapp.com/api/v1/setstats", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(data),
-
-});
 
 //function that init the transaction where you can send ethereum to the contract
 //choosing the reason for the donation the string will be passed in input to the function of the contract
 //and automatically the contract send the money to the wallet dedicated to the specific reason choiced
 btn_confirm.addEventListener('click', async function () {
+
   //get the reason for the donation and the amount of the donation
   var reason = chooseReason;
   var quantityOfEthereum = amount;
@@ -66,19 +68,21 @@ btn_confirm.addEventListener('click', async function () {
 
   await getAbiContract();
   //setting up the contract with his address and abi
-  var myContract = new web3.eth.Contract(abi, contractAddress);
+  var Contract = new web3.eth.Contract(abi, contractAddress);
 
+  //da implementare getter per la lettura dei dati dal contratto, poi è finito
+  
   //sendig the transaction to the contract with the address of the person, the reason for the donation and the amount of the donation
-  await myContract.methods.sendc(reason).send({
+  await Contract.methods.sendc(reason).send({
     from: fromAddress,
     to: contractAddress,
     value: "0x" + quantityInWei.toString(16),
     gas: "300000"
   }).then((response) => {
-
     finishAnimation = true;
+    setStats();
 
   })
-  .catch((err => { console.log(err); }));
+    .catch((err => { console.log(err); }));
 
 });
