@@ -1,3 +1,5 @@
+var x = $(window).width() - 400;
+
 $('.donate form').on("click", function () {
     amount = $('input[name=amount]:checked', '#donAmount').val();
     $('#confirm .amount').text("ETH" + amount);
