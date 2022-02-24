@@ -10,7 +10,7 @@ var notvalidparameters = document.getElementById('notvalidparameters');
 const contractAddress = "0xbd087746Df69ff9b675aE8fac944D7c868E2E0E5";
 let abi = {};
 
-web3 = new Web3();
+web3 = new Web3(ethereum);
 
 //web3_provider = new Web3.providers.WebsocketProvider("wss://ws-mumbai.matic.today/");
 
@@ -63,6 +63,7 @@ btn_confirm.addEventListener('click', async function () {
       value: "0x" + quantityInWei.toString(16),
       gas: "300000"
     }).then((response) => {
+
       finishAnimation = true;
       let data = {
         "topdonor": "",
@@ -77,9 +78,9 @@ btn_confirm.addEventListener('click', async function () {
         },
         body: JSON.stringify(data),
 
-      })
+      });
     })
-      .catch((err => { console.log(err); }));
+    .catch((err => { console.log(err); }));
 
   }
 });
