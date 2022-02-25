@@ -27,15 +27,29 @@ const waitUntil = (condition) => {
 }
 
 async function getAbiContract() {
-  await fetch("https://krypto-medical.herokuapp.com/api/v1/getabi")
+  await fetch("http://localhost:3000/api/v1/getabi")
     .then((res) => res.json())
     .then((data) => { abi = data.abi; })
     .catch((error) => { console.log(error); });
 }
 
-async function setStats(data) {
+async function setStats() {
+
+  var topdonor = await Contract.methods.readtopdonor().call();
+  var topdonated = await Contract.methods.readtopdonated().call();
+  var totaldonation = await Contract.methods.readtotaldonation().call();
+
+  topdonated = BigNumber(topdonated).dividedBy(10 ** 18);
+  totaldonation = BigNumber(totaldonation).dividedBy(10 ** 18);
+  
+  let data = {
+    topdonor: topdonor,
+    topdonated: topdonated,
+    totaldonation: totaldonation
+  }
+
   //setting the data of the stats in the json file
-  await fetch("https://krypto-medical.herokuapp.com/api/v1/setstats", {
+  await fetch("http://localhost:3000/api/v1/setstats", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -44,12 +58,28 @@ async function setStats(data) {
   });
 }
 
-let data = {
-  topdonor: "312312",
-  topdonated: "0.00000234",
-  totaldonation: "239313",
-};
+async function setDataForTable() {
 
+  let time_elapsed = new Date();
+
+  let dataForTable = {
+    address: window.ethereum.selectedAddress,
+    reason: "caio",
+    amount: "amount",
+    time_elapsed: "time_elapsed"
+  }
+
+  await fetch("http://localhost:3000/api/v1/setdatafortable", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(dataForTable),
+  });
+
+}
+
+setDataForTable();
 //function that init the transaction where you can send ethereum to the contract
 //choosing the reason for the donation the string will be passed in input to the function of the contract
 //and automatically the contract send the money to the wallet dedicated to the specific reason choiced
@@ -78,7 +108,7 @@ btn_confirm.addEventListener('click', async function () {
     to: contractAddress,
     value: "0x" + quantityInWei.toString(16),
     gas: "300000"
-  }).then((response) => {
+  }).then(async (response) => {
     finishAnimation = true;
     setStats();
   })

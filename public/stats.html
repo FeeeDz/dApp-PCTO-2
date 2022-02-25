@@ -57,10 +57,6 @@
                                         <a href="aboutus.html"
                                             class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">About Us</a>
                                     </li>
-                                    <li>
-                                        <a href="donationshistory.html"
-                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Donation History</a>
-                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -87,33 +83,39 @@
                         class="w-full xl:h-full h-96 object-cover object-fill sm:block hidden" />
                     <div
                         class="shadow-lg xl:p-6 p-4 sm:w-auto w-full bg-white sm:absolute relative z-18 sm:mt-0 mt-4 left-0 xl:ml-56 sm:ml-12 xl:-mt-40 sm:-mt-12">
-                        <p id="top-donor" class="text-3xl font-semibold text-gray-800"></p>
+                        <p id="top-donor" class="text-2xl font-semibold text-gray-800"></p>
                         <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Top Donor</p>
                     </div>
                     <div
                         class="shadow-lg xl:p-6 p-4 w-48 sm:w-auto w-full bg-white sm:absolute relative z-20 sm:mt-0 mt-4 xl:mt-80 sm:mt-56 xl:-ml-0 sm:-ml-12">
-                        <p id="top-donated" class="text-3xl font-semibold text-gray-800"></p>
-                        <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Top Donated</p>
+                        <p id="total-donation" class="text-2xl font-semibold text-gray-800"></p>
+                        <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Total Donation</p>
                     </div>
                     <div
                         class="shadow-lg xl:p-6 p-4 sm:w-auto w-full bg-white sm:absolute relative z-20 md:mt-0 sm:-mt-5 mt-4 right-0 xl:mr-56 sm:mr-24">
-                        <p id="total-donation" class="text-3xl font-semibold text-gray-800"></p>
-                        <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Total Donation By This Contract</p>
+                        <p id="top-donated" class="text-2xl font-semibold text-gray-800"></p>
+                        <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Top Donated</p>
                     </div>
 
                 </div>
-
-                <div <!--Footer-->
-                    <div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
-                        <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Copyright 2022 </a>
-                    </div>
-
-                </div>
-
 
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="relative" style="padding-top: 56.25%">
+            <iframe class="absolute inset-0 w-full h-full" src="./donationhistory.html" frameborder="0" ></iframe>
+        </div>
 
+        <div <!--Footer-->
+            <div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+                <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Copyright 2022 </a>
+            </div>
+        </div>
+    
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -130,6 +132,7 @@
         document.write('<scr'+'ipt type="text/javascript" src="./javascripts/checkauthorized.js?cb=' +cachebuster+'"></scr' + 'ipt>');
     </script>
     <script src="./javascripts/getstats.js"></script>
+    
 </body>
 
 </html>
