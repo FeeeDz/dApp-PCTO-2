@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/v1/', apiroutes);
 
-app.get('+', (req, res) => {
+app.get('https://krypto-medical.herokuapp.com/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
