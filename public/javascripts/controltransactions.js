@@ -7,7 +7,7 @@ let finishAnimation = false;
 var btn_confirm = document.getElementById('btn-confirm');
 var notvalidparameters = document.getElementById('notvalidparameters');
 
-const contractAddress = "0xd34ce475c733A61cAa9213DC0C237706Af992883";
+const contractAddress = "0xd9145CCE52D386f254917e481eB44e9943F39138";
 let abi = {};
 
 web3 = new Web3(ethereum);
@@ -27,7 +27,7 @@ const waitUntil = (condition) => {
 }
 
 async function getAbiContract() {
-  await fetch("http://localhost:3000/api/v1/getabi")
+  await fetch("https://krypto-medical.herokuapp.com/api/v1/getabi")
     .then((res) => res.json())
     .then((data) => { abi = data.abi; })
     .catch((error) => { console.log(error); });
@@ -49,7 +49,7 @@ async function setStats() {
   }
 
   //setting the data of the stats in the json file
-  await fetch("http://localhost:3000/api/v1/setstats", {
+  await fetch("https://krypto-medical.herokuapp.com/api/v1/setstats", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +69,7 @@ async function setDataForTable() {
     time_elapsed: "time_elapsed"
   }
 
-  await fetch("http://localhost:3000/api/v1/setdatafortable", {
+  await fetch("https://krypto-medical.herokuapp.com/api/v1/setdatafortable", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
