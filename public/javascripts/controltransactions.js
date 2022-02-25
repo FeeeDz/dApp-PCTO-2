@@ -27,7 +27,7 @@ const waitUntil = (condition) => {
 }
 
 async function getAbiContract() {
-  await fetch("http://localhost:3000/api/v1/getabi")
+  await fetch("https://krypto-medical.herokuapp.com/api/v1/getabi")
     .then((res) => res.json())
     .then((data) => { abi = data.abi; })
     .catch((error) => { console.log(error); });
@@ -49,7 +49,7 @@ async function setStats() {
   }
 
   //setting the data of the stats in the json file
-  await fetch("http://localhost:3000/api/v1/setstats", {
+  await fetch("https://krypto-medical.herokuapp.com/api/v1/setstats", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +69,7 @@ async function setDataForTable() {
     time_elapsed: "time_elapsed"
   }
 
-  await fetch("http://localhost:3000/api/v1/setdatafortable", {
+  await fetch("https://krypto-medical.herokuapp.com/api/v1/setdatafortable", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -5,7 +5,7 @@ let t_time_elapsed;
 let dataTable = {};
 
 async function fetchData(){
-    await fetch('http://localhost:3000/api/v1/getdatafortable')
+    await fetch('https://krypto-medical.herokuapp.com/api/v1/getdatafortable')
     .then((res) => res.json())
     .then((data) => {
         dataTable = data;
