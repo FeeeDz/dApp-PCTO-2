@@ -38,3 +38,5 @@ async function buildHtmlTable(selector) {
   
     return columnSet;
   }
+
+buildHtmlTable("table");
