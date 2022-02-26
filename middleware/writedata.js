@@ -8,18 +8,17 @@ function writeStats(req, res, next) {
 };
 
 function writeDataForTable(req, res, next) {
-  let tmp;
+  let jsonFile;
   //if the json file is empty do the catch block, else do the try block
   //function that appends the json passed in the json file
   try {
-    tmp = JSON.parse(fs.readFileSync(__dirname + "/jsonmiddlewaredata/DataForTable.json", function (err) { if (err) throw err; }));
-    tmp.push(req.body);
-    fs.writeFileSync(__dirname + "/jsonmiddlewaredata/DataForTable.json", JSON.stringify(tmp), function (err) { if (err) throw err; });
+    jsonFile = JSON.parse(fs.readFileSync(__dirname + "/jsonmiddlewaredata/DataForTable.json", function (err) { if (err) throw err; }));
+    jsonFile.splice(0, 0, req.body);
+    fs.writeFileSync(__dirname + "/jsonmiddlewaredata/DataForTable.json", JSON.stringify(jsonFile), function (err) { if (err) throw err; });
   }
   catch (err) {
-    tmp = req.body;
-    console.log("passo su err");
-    fs.writeFileSync(__dirname + "/jsonmiddlewaredata/DataForTable.json", JSON.stringify(tmp), function (err) { if (err) throw err; });
+    jsonFile = req.body;
+    fs.writeFileSync(__dirname + "/jsonmiddlewaredata/DataForTable.json", "[" + JSON.stringify(jsonFile) + "]", function (err) { if (err) throw err; });
   }
   next();
 }

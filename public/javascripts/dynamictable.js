@@ -11,13 +11,13 @@ async function buildHtmlTable(selector) {
     var columns = addAllColumnHeaders(dataForTable, selector);
   
     for (var i = 0; i < dataForTable.length ; i++) {
-      var row$ = $('<tr/>').addClass("hover:bg-gray-100 dark:hover:bg-gray-700");
+      var row = $('<tr/>').addClass("hover:bg-gray-100 dark:hover:bg-gray-700");
       for (var colIndex = 0; colIndex < columns.length; colIndex++) {
         var cellValue = dataForTable[i][columns[colIndex]];
         if (cellValue == null) cellValue = "";
-        row$.append($('<td/>').html(cellValue).addClass("py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"));
+        row.append($('<td/>').html(cellValue).addClass("py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"));
       }
-      $(selector).append(row$);
+      $(selector).append(row);
     }
   }
   
@@ -27,15 +27,11 @@ async function buildHtmlTable(selector) {
   function addAllColumnHeaders(dataForTable, selector) {
     var columnSet = [];
   
-    for (var i = 0; i < dataForTable.length ; i++) {
+    for (var i = dataForTable.length; i >= 0 ; i--) {
       var rowHash = dataForTable[i];
-      for (var key in rowHash) {
-        if ($.inArray(key, columnSet) == -1) {
-          columnSet.push(key);
-        }
-      }
+      for (var key in rowHash) if ($.inArray(key, columnSet) == -1) columnSet.push(key); 
     }
-  
+    
     return columnSet;
   }
 
