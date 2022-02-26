@@ -14,7 +14,6 @@ web3 = new Web3(ethereum);
 
 //web3_provider = new Web3.providers.WebsocketProvider("wss://ws-mumbai.matic.today/");
 
-
 //function that wait wuntil the variable becomes true, used for the final animation of the donation
 const waitUntil = (condition) => {
   return new Promise((resolve) => {
