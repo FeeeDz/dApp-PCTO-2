@@ -27,7 +27,7 @@ async function buildHtmlTable(selector) {
   function addAllColumnHeaders(dataForTable, selector) {
     var columnSet = [];
   
-    for (var i = 0; i < dataForTable.length; i++) {
+    for (var i = dataForTable.length; i > 0; i--) {
       var rowHash = dataForTable[i];
       for (var key in rowHash) {
         if ($.inArray(key, columnSet) == -1) {
