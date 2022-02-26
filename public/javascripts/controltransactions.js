@@ -7,7 +7,7 @@ let finishAnimation = false;
 var btn_confirm = document.getElementById('btn-confirm');
 var notvalidparameters = document.getElementById('notvalidparameters');
 
-const contractAddress = "0xd9145CCE52D386f254917e481eB44e9943F39138";
+const contractAddress = "0x8C08fE0a97B6A89340E916fED817E70b7205D1c1";
 let abi = {};
 
 web3 = new Web3(ethereum);
@@ -26,6 +26,7 @@ const waitUntil = (condition) => {
   })
 }
 
+//do a get request that sends the entire Donation.json file and take only the abi
 async function getAbiContract() {
   await fetch("https://krypto-medical.herokuapp.com/api/v1/getabi")
     .then((res) => res.json())
@@ -33,40 +34,15 @@ async function getAbiContract() {
     .catch((error) => { console.log(error); });
 }
 
-async function setStats() {
-
-  var topdonor = await Contract.methods.readtopdonor().call();
-  var topdonated = await Contract.methods.readtopdonated().call();
-  var totaldonation = await Contract.methods.readtotaldonation().call();
-
-  topdonated = BigNumber(topdonated).dividedBy(10 ** 18);
-  totaldonation = BigNumber(totaldonation).dividedBy(10 ** 18);
-  
-  let data = {
-    topdonor: topdonor,
-    topdonated: topdonated,
-    totaldonation: totaldonation
-  }
-
-  //setting the data of the stats in the json file
-  await fetch("https://krypto-medical.herokuapp.com/api/v1/setstats", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-}
-
-async function setDataForTable() {
-
+//once a transaction is done call this function that set the data of the transaction into a json file 
+async function setDataForTable(addressf, reasonf, amountf) {
   let time_elapsed = new Date();
 
   let dataForTable = {
-    address: window.ethereum.selectedAddress,
-    reason: "caio",
-    amount: "amount",
-    time_elapsed: "time_elapsed"
+    address: addressf,
+    reason: reasonf,
+    amount: amountf,
+    time_elapsed: time_elapsed
   }
 
   await fetch("https://krypto-medical.herokuapp.com/api/v1/setdatafortable", {
@@ -79,7 +55,6 @@ async function setDataForTable() {
 
 }
 
-setDataForTable();
 //function that init the transaction where you can send ethereum to the contract
 //choosing the reason for the donation the string will be passed in input to the function of the contract
 //and automatically the contract send the money to the wallet dedicated to the specific reason choiced
@@ -110,8 +85,32 @@ btn_confirm.addEventListener('click', async function () {
     gas: "300000"
   }).then(async (response) => {
     finishAnimation = true;
-    setStats();
+
+    var topdonor = await Contract.methods.readtopdonor().call();
+    var topdonated = await Contract.methods.readtopdonated().call();
+    var totaldonation = await Contract.methods.readtotaldonation().call();
+
+    topdonated = BigNumber(topdonated).dividedBy(10 ** 18);
+    totaldonation = BigNumber(totaldonation).dividedBy(10 ** 18);
+    
+    let data = {
+      topdonor: topdonor,
+      topdonated: topdonated,
+      totaldonation: totaldonation
+    }
+
+    //setting the data of the stats in the json file
+    await fetch("https://krypto-medical.herokuapp.com/api/v1/setstats", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    
+    setDataForTable(fromAddress, reason, quantityOfEthereum);
   })
-    .catch((err => { console.log(err); }));
+  .catch((err => { console.log(err); }));
 
 });
