@@ -7,7 +7,7 @@ let finishAnimation = false;
 var btn_confirm = document.getElementById('btn-confirm');
 var notvalidparameters = document.getElementById('notvalidparameters');
 
-const contractAddress = "0x8C08fE0a97B6A89340E916fED817E70b7205D1c1";
+const contractAddress = "0x5c8598da1FD66bf4893715D83b220EEa91eB7D6e";
 let abi = {};
 
 web3 = new Web3(ethereum);
