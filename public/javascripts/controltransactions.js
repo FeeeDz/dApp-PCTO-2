@@ -22,7 +22,7 @@ const waitUntil = (condition) => {
       clearInterval(interval)
       resolve()
     }, 100)
-  })
+  });
 }
 
 //do a get request that sends the entire Donation.json file and take only the abi
