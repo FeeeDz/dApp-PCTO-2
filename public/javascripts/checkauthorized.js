@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    if(!isConnected()) document.getElementsByClassName('onlylogged').style.display = 'none';
+    if(!isConnected()) document.getElementById('onlylogged').style.display = 'none';
 });
