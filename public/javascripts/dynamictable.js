@@ -10,7 +10,7 @@ async function buildHtmlTable(selector) {
     await fetchData();
     var columns = addAllColumnHeaders(dataForTable, selector);
   
-    for (var i = dataForTable.length; i >= 0 ; i++) {
+    for (var i = dataForTable.length; i >= 0 ; i--) {
       var row$ = $('<tr/>').addClass("hover:bg-gray-100 dark:hover:bg-gray-700");
       for (var colIndex = 0; colIndex < columns.length; colIndex++) {
         var cellValue = dataForTable[i][columns[colIndex]];
