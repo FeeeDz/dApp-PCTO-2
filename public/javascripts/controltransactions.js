@@ -34,32 +34,6 @@ async function getAbiContract() {
     .catch((error) => { console.log(error); });
 }
 
-//once a transaction is done call this function that take some values of the contract and write them into a json file
-async function setStats() {
-
-  var topdonor = await Contract.methods.readtopdonor().call();
-  var topdonated = await Contract.methods.readtopdonated().call();
-  var totaldonation = await Contract.methods.readtotaldonation().call();
-
-  topdonated = BigNumber(topdonated).dividedBy(10 ** 18);
-  totaldonation = BigNumber(totaldonation).dividedBy(10 ** 18);
-  
-  let data = {
-    topdonor: topdonor,
-    topdonated: topdonated,
-    totaldonation: totaldonation
-  }
-
-  //setting the data of the stats in the json file
-  await fetch("https://krypto-medical.herokuapp.com/api/v1/setstats", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-}
-
 //once a transaction is done call this function that set the data of the transaction into a json file 
 async function setDataForTable(addressf, reasonf, amountf) {
   let time_elapsed = new Date();
@@ -111,7 +85,30 @@ btn_confirm.addEventListener('click', async function () {
     gas: "300000"
   }).then(async (response) => {
     finishAnimation = true;
-    setStats();
+
+    var topdonor = await Contract.methods.readtopdonor().call();
+    var topdonated = await Contract.methods.readtopdonated().call();
+    var totaldonation = await Contract.methods.readtotaldonation().call();
+
+    topdonated = BigNumber(topdonated).dividedBy(10 ** 18);
+    totaldonation = BigNumber(totaldonation).dividedBy(10 ** 18);
+    
+    let data = {
+      topdonor: topdonor,
+      topdonated: topdonated,
+      totaldonation: totaldonation
+    }
+
+    //setting the data of the stats in the json file
+    await fetch("https://krypto-medical.herokuapp.com/api/v1/setstats", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    
     setDataForTable(fromAddress, reason, quantityOfEthereum);
   })
   .catch((err => { console.log(err); }));
