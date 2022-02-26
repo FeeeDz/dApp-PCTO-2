@@ -20,7 +20,6 @@ function writeDataForTable(req, res, next) {
     fs.writeFileSync(__dirname + "/jsonmiddlewaredata/DataForTable.json", "[" + JSON.stringify(req.body) + "]", function (err) { if (err) throw err; });
   }
   next();
-
 }
 
 module.exports = {
