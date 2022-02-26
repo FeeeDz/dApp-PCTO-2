@@ -58,6 +58,7 @@ async function setStats() {
   });
 }
 
+
 async function setDataForTable(addressf, reasonf, amountf) {
   let time_elapsed = new Date();
 
