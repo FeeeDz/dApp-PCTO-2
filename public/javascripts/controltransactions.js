@@ -35,13 +35,13 @@ async function getAbiContract() {
 
 //once a transaction is done call this function that set the data of the transaction into a json file 
 async function setDataForTable(addressf, reasonf, amountf) {
-  let time_elapsed = new Date();
-
+  let time_elapsed = new Date().toUTCString();
+  
   let dataForTable = {
     address: addressf,
     reason: reasonf,
     amount: amountf,
-    time_elapsed: time_elapsed
+    time: time_elapsed
   }
 
   await fetch("https://krypto-medical.herokuapp.com/api/v1/setdatafortable", {

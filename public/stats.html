@@ -29,7 +29,7 @@
 
             <div class="w-full flex items-start justify-between">
                 <a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-                    href="success.html">
+                    href="index.html">
                     <img class="object-scale-down h-24 w-48 ..." src="img/newlogo.svg"> Krypto Medical
                 </a>
 
@@ -55,7 +55,8 @@
                                     </li>
                                     <li>
                                         <a href="aboutus.html"
-                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">About Us</a>
+                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">About
+                                            Us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -106,54 +107,8 @@
         <br>
         <br>
         <br>
-        
-        <!-- Donation History-->
-        <div class="flex flex-col">
-            <div class="overflow-x-auto shadow-md sm:rounded-lg">
-                <div class="inline-block min-w-full align-middle">
-                    <div class="overflow-hidden ">
-                        <table id="table" class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
-                            <thead class="bg-gray-100 dark:bg-gray-700">
-                                <tr>
-                                    <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                        Address Wallet
-                                    </th>
-                                    <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                        Reason
-                                    </th>
-                                    <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                        Amount Donated
-                                    </th>
-                                    <th scope="col"
-                                        class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
-                                        Time Elapsed
-                                    </th>  
-                                </tr>
-                            </thead>
-
-                            <tbody id="table-data" class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-                                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        </td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        </td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        </td>
-                                    <td
-                                        class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+        <div class="relative" style="padding-top: 56.25%">
+            <iframe class="absolute inset-0 w-full h-full" src="./donationhistory.html" frameborder="0"></iframe>
         </div>
 
         <div <!--Footer-->
@@ -161,25 +116,21 @@
                 <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Copyright 2022 </a>
             </div>
         </div>
-    
-    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    
-    <!-- cache buster for checklogged.js-->
-    <script type="text/javascript">
-        var cachebuster = Math.round(new Date().getTime() / 1000);
-        document.write('<scr'+'ipt type="text/javascript" src="./javascripts/checklogged.js?cb=' +cachebuster+'"></scr' + 'ipt>');
-    </script>
-    <!-- cache buster for checkauthorized.js-->
-    <script type="text/javascript">
-        var cachebuster = Math.round(new Date().getTime() / 1000);
-        document.write('<scr'+'ipt type="text/javascript" src="./javascripts/checkauthorized.js?cb=' +cachebuster+'"></scr' + 'ipt>');
-    </script>
-    <script src="./javascripts/getstats.js"></script>
-    <script src="./javascripts/dynamictable.js"></script>
-    
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- cache buster for checklogged.js-->
+        <script type="text/javascript">
+            var cachebuster = Math.round(new Date().getTime() / 1000);
+            document.write('<scr' + 'ipt type="text/javascript" src="./javascripts/checklogged.js?cb=' + cachebuster + '"></scr' + 'ipt>');
+        </script>
+        <!-- cache buster for checkauthorized.js-->
+        <script type="text/javascript">
+            var cachebuster = Math.round(new Date().getTime() / 1000);
+            document.write('<scr' + 'ipt type="text/javascript" src="./javascripts/checkauthorized.js?cb=' + cachebuster + '"></scr' + 'ipt>');
+        </script>
+        <script src="./javascripts/getstats.js"></script>
+
 </body>
 
 </html>
