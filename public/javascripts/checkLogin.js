@@ -11,12 +11,12 @@ function redirect(page) {window.location.href = page; }
 function setCookie(cookieName, value,  expireDate) {document.cookie = `${cookieName}=${value}; expires=${expireDate}`; }
 
 let isMetaMask = Boolean(window.ethereum);
-//if metamask is not installed alert the user and don't do anything
 
-if(!isMetaMask) document.getElementById('install-metamask-btn').style.display = 'block';
+//if metamask is not installed change the sentence of the login button
+if(!isMetaMask) document.getElementById('text-login').innerHTML = "Please <b><a style='text-decoration: underline; cursor: pointer;' href='https://metamask.io/'>install MetaMask</a></b> to use <b>Krypto-Medical</b>";
 
 else{
-    document.getElementById('install-metamask-btn').style.display = 'none';
+    document.getElementById('text-login').innerHTML = "<b>Connect </b>your MetaMask wallet by </span><b>clicking the icon</b> below"
 
     loginBtn.addEventListener('click' , async () => {
         
