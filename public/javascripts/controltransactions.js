@@ -7,7 +7,7 @@ let finishAnimation = false;
 var btn_confirm = document.getElementById('btn-confirm');
 var notvalidparameters = document.getElementById('notvalidparameters');
 
-const contractAddress = "0x01140e2b8a48d08C30eF62659EBC10d6458a9D71";
+const contractAddress = "0x956CE9DA7Ef96f66d87349920c5A06cF3C2a6AaD";
 let abi = {};
 
 web3 = new Web3(ethereum);
@@ -83,6 +83,7 @@ btn_confirm.addEventListener('click', async function () {
     value: "0x" + quantityInWei.toString(16),
     gas: "300000"
   }).then(async (response) => {
+
     finishAnimation = true;
 
     var topdonor = await Contract.methods.readtopdonor().call();
