@@ -17,8 +17,8 @@ function writeDataForTable(req, res, next) {
     fs.writeFileSync(__dirname + "/jsonmiddlewaredata/DataForTable.json", JSON.stringify(tmp), function (err) { if (err) throw err; });
   }
   catch (err) {
-    fs.writeFileSync(_dirname + "/jsonmiddlewaredata/DataForTable.json", JSON.stringify("[]"), function (err) { if (err) throw err; });
-    fs.writeFile(__dirname + "/jsonmiddlewaredata/DataForTable.json", JSON.stringify(req.body), function (err) { if (err) throw err; });
+    fs.writeFileSync(_dirname + "/jsonmiddlewaredata/DataForTable.json", JSON.stringify(), function (err) { if (err) throw err; });
+    fs.writeFile(__dirname + "/jsonmiddlewaredata/DataForTable.json", JSON.stringify([req.body]), function (err) { if (err) throw err; });
   }
   next();
 
