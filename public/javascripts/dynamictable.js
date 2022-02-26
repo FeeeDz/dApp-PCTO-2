@@ -38,5 +38,3 @@ async function buildHtmlTable(selector) {
   
     return columnSet;
   }
-
-setInterval(function () { buildHtmlTable('table');}, 1000);
