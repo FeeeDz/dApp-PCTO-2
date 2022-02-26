@@ -107,7 +107,7 @@ btn_confirm.addEventListener('click', async function () {
       body: JSON.stringify(data),
     });
 
-    setDataForTable(fromAddress, reason, quantityOfEthereum);
+    await setDataForTable(fromAddress, reason, quantityOfEthereum);
   })
   .catch((err => { console.log(err); }));
 
