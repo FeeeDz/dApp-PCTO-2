@@ -7,7 +7,7 @@ let finishAnimation = false;
 var btn_confirm = document.getElementById('btn-confirm');
 var notvalidparameters = document.getElementById('notvalidparameters');
 
-const contractAddress = "0xd9145CCE52D386f254917e481eB44e9943F39138";
+const contractAddress = "0x8C08fE0a97B6A89340E916fED817E70b7205D1c1";
 let abi = {};
 
 web3 = new Web3(ethereum);
@@ -58,15 +58,14 @@ async function setStats() {
   });
 }
 
-async function setDataForTable() {
-
+async function setDataForTable(addressf, reasonf, amountf) {
   let time_elapsed = new Date();
 
   let dataForTable = {
-    address: window.ethereum.selectedAddress,
-    reason: "caio",
-    amount: "amount",
-    time_elapsed: "time_elapsed"
+    address: addressf,
+    reason: reasonf,
+    amount: amountf,
+    time_elapsed: time_elapsed
   }
 
   await fetch("https://krypto-medical.herokuapp.com/api/v1/setdatafortable", {
@@ -79,7 +78,6 @@ async function setDataForTable() {
 
 }
 
-setDataForTable();
 //function that init the transaction where you can send ethereum to the contract
 //choosing the reason for the donation the string will be passed in input to the function of the contract
 //and automatically the contract send the money to the wallet dedicated to the specific reason choiced
@@ -111,6 +109,7 @@ btn_confirm.addEventListener('click', async function () {
   }).then(async (response) => {
     finishAnimation = true;
     setStats();
+    setDataForTable(window.ethereum.selectedAddress, reason, quantityOfEthereum);
   })
     .catch((err => { console.log(err); }));
 
