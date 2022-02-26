@@ -26,6 +26,7 @@ const waitUntil = (condition) => {
   })
 }
 
+//do a get request that sends the entire Donation.json file and take only the abi
 async function getAbiContract() {
   await fetch("https://krypto-medical.herokuapp.com/api/v1/getabi")
     .then((res) => res.json())
@@ -33,6 +34,7 @@ async function getAbiContract() {
     .catch((error) => { console.log(error); });
 }
 
+//once a transaction is done call this function that take some values of the contract and write them into a json file
 async function setStats() {
 
   var topdonor = await Contract.methods.readtopdonor().call();
@@ -58,7 +60,7 @@ async function setStats() {
   });
 }
 
-
+//once a transaction is done call this function that set the data of the transaction into a json file 
 async function setDataForTable(addressf, reasonf, amountf) {
   let time_elapsed = new Date();
 
@@ -110,8 +112,8 @@ btn_confirm.addEventListener('click', async function () {
   }).then(async (response) => {
     finishAnimation = true;
     setStats();
-    setDataForTable(window.ethereum.selectedAddress, reason, quantityOfEthereum);
+    setDataForTable(fromAddress, reason, quantityOfEthereum);
   })
-    .catch((err => { console.log(err); }));
+  .catch((err => { console.log(err); }));
 
 });

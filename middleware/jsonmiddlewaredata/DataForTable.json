@@ -1,8 +1,1 @@
-[
-    {
-        "address": "0x82cdcac58bc26dd81c3e5c1507b5003f15b7928d",
-        "reason": "Blood",
-        "amount": "0.001",
-        "time_elapsed": "2022-02-26T08:32:32.296Z"
-    }
-]
+[{"address":"0x82cdcac58bc26dd81c3e5c1507b5003f15b7928d","reason":"Blood","amount":"0.001","time_elapsed":"2022-02-26T08:32:32.296Z"},{"address":"0x82cdcac58bc26dd81c3e5c1507b5003f15b7928d","reason":"Blood","amount":"0.5","time_elapsed":"2022-02-26T09:03:40.978Z"},{"address":"0x82cdcac58bc26dd81c3e5c1507b5003f15b7928d","reason":"Blood","amount":"0.001","time_elapsed":"2022-02-26T09:06:39.449Z"},{"address":"0x82cdcac58bc26dd81c3e5c1507b5003f15b7928d","reason":"Blood","amount":"0.5","time_elapsed":"2022-02-26T09:09:12.868Z"},{"address":"0x82cdcac58bc26dd81c3e5c1507b5003f15b7928d","reason":"Blood","amount":"0.5","time_elapsed":"2022-02-26T09:18:05.168Z"},{"address":"0x82cdcac58bc26dd81c3e5c1507b5003f15b7928d","reason":"Blood","amount":"0.5","time_elapsed":"2022-02-26T09:20:04.720Z"},{"address":"0x82cdcac58bc26dd81c3e5c1507b5003f15b7928d","reason":"Blood","amount":"0.5","time_elapsed":"2022-02-26T09:30:45.337Z"},{"address":"0x82cdcac58bc26dd81c3e5c1507b5003f15b7928d","reason":"Blood","amount":"0.5","time_elapsed":"2022-02-26T09:32:36.888Z"}]

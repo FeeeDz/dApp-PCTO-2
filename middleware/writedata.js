@@ -9,6 +9,8 @@ function writeStats(req, res, next) {
 
 function writeDataForTable(req, res, next) {
   let tmp;
+  //if the json file is empty do the catch block, else do the try block
+  //function that appends the json passed in the json file
   try {
     tmp = JSON.parse(fs.readFileSync(__dirname + "/jsonmiddlewaredata/DataForTable.json", function (err) { if (err) throw err; }));
     tmp.push(req.body);
