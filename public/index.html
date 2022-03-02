@@ -98,7 +98,6 @@
 					<img src="img/Solidity-Logo.wine.svg" class="h-12 pr-4 bounce-top-icons">
 					<img src="img/polygon-matic-logo.svg" class="h-12 bounce-top-icons">
 				</div>
-
 			</div>
 
 			<!--Right Col-->
@@ -108,16 +107,42 @@
 
 			<!--Footer-->
 			<div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+				<p class="leading-normal text-base md:text-10xl mb-0 text-center md:text-left slide-in-bottom-subtitle">
+					Download our official guide
+				</p>
+				<!-- option to download KryptoMedical_HowToUse_ENG.pdf-->
+				<a class="inline-block text-blue-300 no-underline hover:text-indigo-800 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4"
+					href="download/KryptoMedical_HowToUse_ITA.pdf">
+					<p class="indent-10 text-center md:text-center text-gray-600 text-lg md:text-10xl slide-in-bottom-subtitle justify-center">
+						ITA
+					</p>
+				</a>
+				<a class="inline-block text-blue-300 no-underline hover:text-indigo-800 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4"
+					href="download/KryptoMedical_HowToUse_ENG.pdf">
+					<p class="indent-10 text-center md:text-center text-gray-600 text-lg md:text-10xl slide-in-bottom-subtitle justify-center">
+						ENG
+					</p>
+				</a>
+				<!-- option to download KryptoMedical_HowToUse_ENG.pdf-->
+				<div class="w-full pt-12 pb-4 text-sm text-center md:text-left fade-in">
+
+				</div>
 				<a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Copyright 2022 </a>
 			</div>
 
 		</div>
 
 	</div>
-
 	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 
 	<script src="./javascripts/checkindex.js"></script>
+	<script type="text/javascript">
+		var alerted = localStorage.getItem('alerted') || '';
+		if (alerted != 'yes') {
+		 alert("Krypto Medical is a non-profit project. If you want to support us, please download our guide and donate to the project. Thank you!");
+		 localStorage.setItem('alerted','yes');
+		}
+	</script>
 	
 </body>
 
